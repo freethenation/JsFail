@@ -1,5 +1,6 @@
 word count
 json format
+json validate
 javascript format
 javascript minify
 json minify
@@ -12,3 +13,29 @@ markdown editor --- https://github.com/OscarGodson/EpicEditor
 html format
 html validate
 random password generator - https://github.com/bermi/password-generator
+spellchecker
+anagrams
+alphabetizer
+calculator (just type it in and eval basically)
+rot13
+reverse a string
+pig latin
+cryptogram thingy (letter substitution)
+magic square generator
+sudoku generator
+investment calculator (interest over time)
+checklist generator
+quadratic formula
+square root and square
+prime checker
+base converter
+logarithms
+standard deviation
+basic trig (input stuff for right/arbitrary triangle)
+permutations, combinations
+random number generator
+"copy this 100 times" (in textbox)
+format stripper
+whitespace stripper
+online regex
+
