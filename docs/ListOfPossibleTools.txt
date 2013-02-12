@@ -1,0 +1,12 @@
+word count
+json format
+javascript format
+javascript minify
+json minify
+json to xml
+javascript unescape
+javascript escape
+markdown editor --- https://github.com/OscarGodson/EpicEditor
+html format
+html validate
+random password generator - https://github.com/bermi/password-generator
