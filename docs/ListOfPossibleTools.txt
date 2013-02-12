@@ -4,6 +4,8 @@ javascript format
 javascript minify
 json minify
 json to xml
+xml to json
+jslint  --- https://github.com/douglascrockford/JSLint
 javascript unescape
 javascript escape
 markdown editor --- https://github.com/OscarGodson/EpicEditor
