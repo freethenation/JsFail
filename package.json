@@ -1,0 +1,25 @@
+{
+  "name": "notify",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.1.0",
+    "less-middleware": "*",
+    "coffee-script": "1.4.0",
+    "ect": "0.4.7",
+    "pg": ">= 0.12.3",
+    "nconf": ">= 0.6.7",
+    "funcflow": ">= 1.1.0",
+    "winston": ">= 0.6.2",
+    "underscore": ">= 1.4.4",
+    "sequelize":"1.5.0",
+    "time":">= 0.8.4",
+    "glob":"3.1.20",
+    "uglify-js":">= 2.2.4",
+    "validator":">= 0.4.24",
+    "password-hash":">= 1.2.1"
+  }
+}
