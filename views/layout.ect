@@ -5,7 +5,7 @@
 <link href="/css/common.css" rel="stylesheet" type="text/css" />
 <link href="/css/codemirror.css" rel="stylesheet" type="text/css" />
 <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
-<script src="/js/codemirror.js"></script>
+<script src="/js/editor.js"></script>
 <% if @tool? : %>
     <% for script in @tool.scripts : %>
         <script src="<%= script %>"></script>
@@ -20,9 +20,9 @@
     <div class="span2">
       <% include 'menu.ect', this %>
     </div>
-    <div class="span10"><div class="row">
+    <div id="content" class="span10 content">
       <% content %>
-    </div></div>
+    </div>
   </div>
 </body>
 </html>

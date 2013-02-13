@@ -1,0 +1,12 @@
+<div id="editordiv">
+    <textarea id="editor" name="textarea"></textarea>
+</div>
+<script type="text/javascript">
+window.editor = null;
+$(document).ready(function(){
+    window.editor = CodeMirror.fromTextArea($("#editor")[0], $.extend({
+        lineNumbers: true,
+        tabMode: "indent"
+    }, <%- JSON.stringify(this).toString() %>));
+});
+</script>

@@ -3,6 +3,22 @@
 	{
 		"selected_items":
 		[
+			[
+				"Word",
+				"WordCount"
+			],
+			[
+				"too",
+				"tool"
+			],
+			[
+				"for",
+				"forx	Range Comprehension (exclusive)"
+			],
+			[
+				"f",
+				"forin	Array Comprehension"
+			]
 		]
 	},
 	"buffers":
@@ -11,19 +27,87 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 58.0,
+		"height": 81.0,
 		"selected_items":
 		[
 			[
+				"check",
+				"Coffee: Check Syntax"
+			],
+			[
+				"ect",
+				"Set Syntax: ECT <%"
+			],
+			[
+				"less",
+				"Set Syntax: LESS"
+			],
+			[
 				"install",
 				"Package Control: Install Package"
+			],
+			[
+				"coffe",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"installp",
+				"Package Control: Install Package"
+			],
+			[
+				"folder",
+				"Project: Add Folder"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"commit",
+				"Git: Commit"
+			],
+			[
+				"git log",
+				"Git: Log All"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git:c",
+				"Git: Commit"
+			],
+			[
+				"git:push",
+				"Git: Push"
 			],
 			[
 				"install pac",
 				"Package Control: Install Package"
 			]
 		],
-		"width": 400.0
+		"width": 512.0
 	},
 	"console":
 	{
@@ -40,19 +124,41 @@
 	},
 	"file_history":
 	[
-		"/C/projects/jstools/package.json",
+		"/C/projects/jstools/tools/WordCount.coffee",
+		"/C/projects/jstools/assets/js/WordCount.coffee",
+		"/C/projects/jstools/assets/bootstrap/css/common.less",
+		"/C/projects/jstools/views/layout.ect",
+		"/C/projects/jstools/views/tools/WordCount.ect",
+		"/C/projects/jstools/app.coffee",
+		"/C/projects/jstools/assets/bootstrap/css/variables.less",
+		"/C/projects/jstools/assets/bootstrap/css/accordion.less",
+		"/C/projects/jstools/assets/css/common.less",
+		"/C/projects/jstools/assets/bootstrap/css/bootstrap.less",
+		"/C/projects/jstools/assets/css/codemirror.css",
+		"/C/projects/jstools/notify.log",
+		"/C/projects/jstools/views/menu.ect",
+		"/C/projects/jstools/views/header.ect",
+		"/C/projects/jstools/routes.coffee",
+		"/C/projects/jstools/views/about.ect",
+		"/C/projects/notify/routes/index.coffee",
+		"/C/temp/coffeescript-concat/coffeescript-concat.coffee",
 		"/C/projects/jstools/common.coffee",
-		"/C/projects/jstools/app.coffee"
+		"/C/projects/jstools/views/tools/WordCount.coffee",
+		"/C/Users/FreeTheNation/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/projects/jstools/docs/ListOfPossibleTools.txt",
+		"/C/Users/FreeTheNation/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/projects/jstools/package.json"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"*.less"
 		]
 	},
 	"find_state":
@@ -60,11 +166,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".span",
+			"span",
+			".span",
+			"span",
+			"\\n\\n",
+			".debug",
+			".coffe",
+			"debug",
+			"o",
+			"file"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
 		],
@@ -88,7 +204,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -113,6 +229,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.git":
+	{
+		"height": 118.0
+	},
 	"replace":
 	{
 		"height": 0.0
@@ -123,6 +243,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				".txt",
+				"docs/ListOfPossibleTools.txt"
+			]
 		],
 		"width": 0.0
 	},
@@ -138,6 +262,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 254.0,
 	"status_bar_visible": true
 }
