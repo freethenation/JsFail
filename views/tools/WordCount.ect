@@ -1,5 +1,15 @@
 <% extend 'layout.ect' %>
-<div class="row"><div class="offset1 span8 text-center"><h5>
-    Don't want to open a full blown word editor just to see how many words are in your document? Just paste your text into the text box below and this nifty little tool will do it for you!
-</h5></div></div>
-<% include 'editor.ect', {fill:true} %>
+<div class="row">
+    <div class="span10"><h5>
+        There are <strong id="wordcount">0</strong> words in the text document.
+    </h5></div>
+</div>
+<% include 'editor.ect', {fill:true,lineNumbers:false} %>
+<script type="text/javascript">
+CodeMirror.defineInitHook(function(editor){
+    editor.on("change", function(editor){
+        var matches = editor.getValue().match(/\S+/g);
+        $("#wordcount").text(matches ? matches.length : 0);
+    })
+})
+</script>
