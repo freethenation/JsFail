@@ -11,6 +11,7 @@ nconf.defaults({
     httpPort:3001
     debug:true
     logFile:'notify.log'
+    appName:'JSTools'
 })
 module.exports.nconf = nconf
 

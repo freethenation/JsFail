@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="navbar span12">
+      <div class="navbar-inner">
+        <a class="brand" href="#"><%= @nconf.get("appName")%></a>
+        <ul class="nav">
+          <li <% if @page=="index" : %>class="active"<% end %>>
+            <a href="/index.html">Home</a>
+          </li>
+          <li <% if @page=="about" : %>class="active"<% end %>>
+            <a href="/about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>

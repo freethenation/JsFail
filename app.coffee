@@ -1,17 +1,18 @@
 #!/usr/bin/env coffee
 express = require('express')
-# routes = require('./routes')
+routes = require('./routes')
 http = require('http')
 path = require('path')
 ect = require('ect')
 common = require('./common')
 nconf = common.nconf
 logger = common.logger
+fs = require('fs')
 
 # create app
 app = express()
 ectRenderer = ect({ watch: nconf.get("debug"), root: __dirname + '/views' })
-logger.debug('App Created!')
+logger.info('App Created!')
 
 # create compiler
 compiler = require('connect-compiler')({
@@ -23,6 +24,17 @@ compiler = require('connect-compiler')({
         less:{paths:["./assets/bootstrap/css","./assets/css"],compress:!nconf.get("debug")}
     }
 })
+
+# create tool list
+tmp = (tool.replace(".coffee","") for tool in fs.readdirSync('./tools') when /\.coffee$/.test(tool))
+logger.info("Tools Found! " + tmp)
+tmp = (require('./tools/' + tool) for tool in tmp)
+tools = {length:tmp.length}
+for i in [0...tmp.length] by 1
+    tools[i]=tmp[i]
+    tools[tmp[i].page]=tmp[i]
+global.tools = tools
+logger.info("Tools Loaded!")
 
 app.configure(()->
     app.set('port', nconf.get("httpPort"))
@@ -46,21 +58,12 @@ app.configure(()->
         else next()
     )
 )
-logger.debug('App Configured!')
+logger.info('App Configured!')
 
-###
-app.get('/index.html', routes.index)
-app.get('/login.html', routes.login)
-app.get('/signup.html', routes.signup)
-app.post('/signup.html', routes.signupPost)
-app.all('*', routes.ensureLogin) # everything below this requires login
-app.get('/account.html', routes.account)
-app.get('/scheduled.html', routes.scheduled)
-app.get('/results.html', routes.results)
-app.get('/logout.html', routes.logout)
-logger.debug('Routes Configured!')
-###
+app.get(/\/tools\/.*\.html/, routes.tool)
+app.get('/index.html', routes.simple("index"))
+app.get('/about.html', routes.simple("about"))
 
 http.createServer(app).listen(nconf.get("httpPort"), ()->
-    logger.debug("Server listening on port #{nconf.get('httpPort')}!")
+    logger.info("Server listening on port #{nconf.get('httpPort')}!")
 )
