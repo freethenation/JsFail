@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="http://code.jquery.com/jquery.min.js"></script>
-<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
-<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link href="/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/css/codemirror.css" rel="stylesheet" type="text/css" />
 <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
+<script src="/js/codemirror.js"></script>
+<% if @tool? : %>
+    <% for script in @tool.scripts : %>
+        <script src="<%= script %>"></script>
+    <% end %>
+<% end %>
 <meta charset=utf-8 />
 <title><%= @nconf.get("appName")%></title>
 </head>
@@ -14,9 +20,9 @@
     <div class="span2">
       <% include 'menu.ect', this %>
     </div>
-    <div class="span10">
+    <div class="span10"><div class="row">
       <% content %>
-    </div>
+    </div></div>
   </div>
 </body>
 </html>

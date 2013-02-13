@@ -1,1 +1,0 @@
-j = ()->console.log('ff')
