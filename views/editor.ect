@@ -6,7 +6,8 @@ window.editor = null;
 $(document).ready(function(){
     window.editor = CodeMirror.fromTextArea($("#editor")[0], $.extend({
         lineNumbers: true,
-        tabMode: "indent"
+        tabMode: "indent",
+        matchBrackets:true
     }, <%- JSON.stringify(this).toString() %>));
 });
 </script>

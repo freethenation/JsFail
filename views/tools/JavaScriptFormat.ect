@@ -1,0 +1,12 @@
+<% extend 'layout.ect' %>
+<% include 'editor.ect', {fill:true, mode:"text/typescript"} %>
+<div class="row std-margin">
+    <button id="formatButton" class="offset3 span4 btn btn-primary">Format JavaScript</button>
+</div>
+<script type="text/javascript">
+CodeMirror.defineInitHook(function(editor){
+    $("#formatButton").click(function(){
+        editor.setValue(jstools.prettyPrintJs(editor.getValue()))
+    })
+})
+</script>

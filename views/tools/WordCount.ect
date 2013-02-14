@@ -4,7 +4,7 @@
         There are <strong id="wordcount">0</strong> words in the text document.
     </h5></div>
 </div>
-<% include 'editor.ect', {fill:true,lineNumbers:false,lineWrapping:true} %>
+<% include 'editor.ect', {fill:true,lineNumbers:false,lineWrapping:true,matchBrackets:false} %>
 <script type="text/javascript">
 CodeMirror.defineInitHook(function(editor){
     editor.on("change", function(editor){

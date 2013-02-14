@@ -1,4 +1,5 @@
 #= require codemirror
+#= require addon/matchbrackets
 CodeMirror.defineInitHook((editor)->
     if editor.options.fill
         $(window).resize(()->
