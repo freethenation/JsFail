@@ -1,12 +1,21 @@
 <% extend 'layout.ect' %>
+<div id="errorDiv" class="alert alert-error std-margin std-padding" style="visibility:hidden;"><b>Error: </b>There were some errors in the JavaScript. They are marked in the source below.</div>
 <% include 'editor.ect', {fill:true, mode:"text/typescript"} %>
 <div class="row std-margin">
     <button id="formatButton" class="offset3 span4 btn btn-primary">Format JavaScript</button>
 </div>
 <script type="text/javascript">
 CodeMirror.defineInitHook(function(editor){
+    var errorDiv = $("#errorDiv");
+    editor.on("change", jstools.debounce(function(editor, changeObj){
+        jstools.clearErrors(editor, errorDiv);
+        var ast = jstools.parseJs(editor)
+        jstools.displayErrors(editor,ast,errorDiv)
+    }, 500))
     $("#formatButton").click(function(){
-        editor.setValue(jstools.prettyPrintJs(editor.getValue()))
+        jstools.clearErrors(editor, errorDiv);
+        var ast = jstools.prettyPrintJs(editor);
+        jstools.displayErrors(editor,ast,errorDiv);
     })
 })
 </script>
