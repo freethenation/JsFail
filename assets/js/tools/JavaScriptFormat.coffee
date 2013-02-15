@@ -1,5 +1,7 @@
 #= require ../esprima
 #= require ../escodegen.browser
+#= require ../falafel
+#= require ../durable-json-lint
 #= require ../utils
 if not window.jstools? then window.jstools = {}
 jstools = window.jstools
@@ -27,8 +29,8 @@ displayErrors=(editor,errors,errorMsgEle)->
     after = editor.charCoords({line: editor.getCursor().line + 1, ch: 0}, "local").top
     if info.top + info.clientHeight < after
         editor.scrollTo(null, after - info.clientHeight + 3)
-parseJs=(editor)->
-    str = editor.getValue()
+parseJs=(str)->
+    if typeof str != "string" then str = str.getValue()
     #parse the source
     try
         ast = esprima.parse(str,{
@@ -39,9 +41,30 @@ parseJs=(editor)->
         return {errors:[err],success:false} #critical error... bail
     ast.success = true
     return ast
-prettyPrintJs=(editor, options={})->
-    str = editor.getValue()
-    ast = parseJs(editor)
+
+parseJson=(str)->
+    if typeof str != "string" then str = str.getValue()
+    json = durableJsonLint(str)
+    errors = []
+    for error in json.errors
+        switch error.status
+            when "guessable", "fail","crash"
+                errors.push(error)
+    json.errors = errors
+    return json
+
+prettyPrintJson=(editor, str=null)->
+    if not str then str = editor.getValue()
+    json = parseJson(str)
+    if json.errors.length > 0
+        return {errors:json.errors,success:false} #critical error... bail
+    console.log(JSON.parse(json.json))
+    editor.setValue(JSON.stringify(JSON.parse(json.json), null, "    "))
+    return json
+
+prettyPrintJs=(editor, str=null, options={})->
+    if not str then str = editor.getValue()
+    ast = parseJs(str)
     if !ast.success then return ast
     #format the source
     newStr = escodegen.generate(ast,$.extend({
@@ -50,11 +73,13 @@ prettyPrintJs=(editor, options={})->
     },options))
     editor.setValue(newStr)
     #if there was formatting done redo prettyPrintJs to get new error line numbers
-    if str != newStr then return prettyPrintJs(editor, options)
+    if str != newStr then return prettyPrintJs(editor, null, options)
     else return ast
 
 #export stuff so someone else can see them
+jstools.parseJson = parseJson
 jstools.prettyPrintJs = prettyPrintJs
 jstools.clearErrors = clearErrors
 jstools.displayErrors = displayErrors
 jstools.parseJs = parseJs
+jstools.prettyPrintJson = prettyPrintJson

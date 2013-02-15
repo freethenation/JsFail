@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"re",
+				"require"
+			],
+			[
+				"Ja",
+				"JavaScriptFormat"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
 				"Word",
 				"WordCount"
 			],
@@ -23,20 +35,56 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "views/tools/JsonFormat.ect",
+			"settings":
+			{
+				"buffer_size": 1004,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "assets/js/tools/JavaScriptFormat.coffee",
+			"settings":
+			{
+				"buffer_size": 2883,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/tools/JavaScriptFormat.ect",
+			"settings":
+			{
+				"buffer_size": 984,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 81.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
-				"check",
+				"ect",
+				"Set Syntax: ECT <%"
+			],
+			[
+				"coffe",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"coffee",
 				"Coffee: Check Syntax"
 			],
 			[
-				"ect",
-				"Set Syntax: ECT <%"
+				"co",
+				"Coffee: Check Syntax"
+			],
+			[
+				"check",
+				"Coffee: Check Syntax"
 			],
 			[
 				"less",
@@ -45,10 +93,6 @@
 			[
 				"install",
 				"Package Control: Install Package"
-			],
-			[
-				"coffe",
-				"Set Syntax: CoffeeScript"
 			],
 			[
 				"insta",
@@ -107,7 +151,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 512.0
+		"width": 400.0
 	},
 	"console":
 	{
@@ -124,20 +168,36 @@
 	},
 	"file_history":
 	[
-		"/C/projects/jstools/tools/WordCount.coffee",
-		"/C/projects/jstools/assets/js/WordCount.coffee",
-		"/C/projects/jstools/assets/bootstrap/css/common.less",
-		"/C/projects/jstools/views/layout.ect",
-		"/C/projects/jstools/views/tools/WordCount.ect",
-		"/C/projects/jstools/app.coffee",
-		"/C/projects/jstools/assets/bootstrap/css/variables.less",
-		"/C/projects/jstools/assets/bootstrap/css/accordion.less",
+		"/C/projects/jstools/assets/js/tools/JavaScriptFormat.coffee",
+		"/C/projects/jstools/tools/JsonFormat.coffee",
 		"/C/projects/jstools/assets/css/common.less",
+		"/C/projects/jstools/app.coffee",
+		"/C/projects/jstools/assets/js/editor.coffee",
+		"/C/projects/jstools/assets/js/utils.coffee",
+		"/C/projects/jstools/docs/ListOfPossibleTools.txt",
+		"/C/projects/jstools/assets/js/codemirror.js",
+		"/C/projects/jstools/node_modules/.bin/coffee",
+		"/C/projects/jstools/views/tools/JavaScriptFormat.ect",
+		"/C/projects/jstools/Cakefile",
+		"/C/projects/jstools/assets/js/escodegen.browser.js",
+		"/C/projects/jstools/package.json",
+		"/C/projects/jstools/views/editor.ect",
+		"/C/projects/jstools/views/tools/WordCount.ect",
+		"/C/projects/jstools/tools/WordCount.coffee",
+		"/C/projects/jstools/views/layout.ect",
+		"/C/projects/jstools/public/css/common.css",
+		"/C/projects/jstools/public/js/WordCount.js",
+		"/C/projects/jstools/views/header.ect",
+		"/C/projects/jstools/assets/js/WordCount.coffee",
+		"/C/projects/jstools/assets/js/textarea.coffee",
+		"/C/projects/twilio/server/server.py",
+		"/C/projects/jstools/assets/bootstrap/css/common.less",
+		"/C/projects/jstools/assets/bootstrap/css/accordion.less",
+		"/C/projects/jstools/assets/bootstrap/css/variables.less",
 		"/C/projects/jstools/assets/bootstrap/css/bootstrap.less",
 		"/C/projects/jstools/assets/css/codemirror.css",
 		"/C/projects/jstools/notify.log",
 		"/C/projects/jstools/views/menu.ect",
-		"/C/projects/jstools/views/header.ect",
 		"/C/projects/jstools/routes.coffee",
 		"/C/projects/jstools/views/about.ect",
 		"/C/projects/notify/routes/index.coffee",
@@ -145,9 +205,7 @@
 		"/C/projects/jstools/common.coffee",
 		"/C/projects/jstools/views/tools/WordCount.coffee",
 		"/C/Users/FreeTheNation/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-		"/C/projects/jstools/docs/ListOfPossibleTools.txt",
-		"/C/Users/FreeTheNation/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
-		"/C/projects/jstools/package.json"
+		"/C/Users/FreeTheNation/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap"
 	],
 	"find":
 	{
@@ -158,6 +216,7 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"*.coffee",
 			"*.less"
 		]
 	},
@@ -166,6 +225,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"console.log",
+			"jstools",
+			"clearErrors",
+			"console",
 			".span",
 			"span",
 			".span",
@@ -193,8 +256,91 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "views/tools/JsonFormat.ect",
+					"settings":
+					{
+						"buffer_size": 1004,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								974,
+								974
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ECT/Syntaxes/ect_html.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 91.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "assets/js/tools/JavaScriptFormat.coffee",
+					"settings":
+					{
+						"buffer_size": 2883,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1954,
+								1954
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CoffeeScript/CoffeeScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 650.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "views/tools/JavaScriptFormat.ect",
+					"settings":
+					{
+						"buffer_size": 984,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								954,
+								911
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ECT/Syntaxes/ect_html.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -244,6 +390,22 @@
 		"selected_items":
 		[
 			[
+				"coffe",
+				"node_modules/.bin/coffee"
+			],
+			[
+				"esc",
+				"assets/js/escodegen.browser.js"
+			],
+			[
+				"pac",
+				"package.json"
+			],
+			[
+				"wordcount",
+				"tools/WordCount.coffee"
+			],
+			[
 				".txt",
 				"docs/ListOfPossibleTools.txt"
 			]
@@ -262,6 +424,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 254.0,
+	"side_bar_width": 199.0,
 	"status_bar_visible": true
 }

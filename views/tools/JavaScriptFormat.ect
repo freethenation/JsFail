@@ -12,10 +12,10 @@ CodeMirror.defineInitHook(function(editor){
         var ast = jstools.parseJs(editor)
         jstools.displayErrors(editor,ast,errorDiv)
     }, 500))
-    $("#formatButton").click(function(){
+    $("#formatButton").click(jstools.debounce(function(){
         jstools.clearErrors(editor, errorDiv);
         var ast = jstools.prettyPrintJs(editor);
         jstools.displayErrors(editor,ast,errorDiv);
-    })
+    },500,true))
 })
 </script>
