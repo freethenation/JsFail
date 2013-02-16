@@ -9,21 +9,25 @@ widgets=[]
 clearErrors=(editor,errorMsgEle)->
     while widgets.length > 0
         editor.removeLineWidget(widgets.pop())
-    #hide error div if supplied
-    if errorMsgEle 
-        $(errorMsgEle).css('visibility','hidden')
-        #$(window).trigger("resize") #make text area fill after hide
-displayErrors=(editor,errors,errorMsgEle)->
+displayErrors=(editor,errors,errorMsgEle,correctMsgEle)->
     errors = errors.errors if !jstools.isArray errors
-    if !(errors?.length > 0) then return
+    if !(errors?.length > 0)
+        if errorMsgEle and correctMsgEle
+            $(correctMsgEle).show().css('visibility','visible')
+            $(errorMsgEle).hide().css('visibility','hidden')
+        else if errorMsgEle
+            $(errorMsgEle).css('visibility','hidden')
+        return
     for err in errors
         msg = $("<div class='alert alert-error no-margin std-padding'><b>Error: </b><span></span></div>")
         msg.find("span").text(err.description)
         widgets.push(editor.addLineWidget(err.lineNumber - 1, msg[0], {coverGutter: false, noHScroll: true}));
     #display error div if supplied
-    if errorMsgEle 
+    if errorMsgEle and correctMsgEle
+        $(errorMsgEle).show().css('visibility','visible')
+        $(correctMsgEle).hide().css('visibility','hidden')
+    else if errorMsgEle
         $(errorMsgEle).css('visibility','visible')
-        #$(window).trigger("resize") #make text area fill after show
     #maintain scroll position
     info = editor.getScrollInfo()
     after = editor.charCoords({line: editor.getCursor().line + 1, ch: 0}, "local").top
@@ -42,16 +46,17 @@ parseJs=(str)->
     ast.success = true
     return ast
 
-parseJson=(str)->
+parseJson=(str, reportAllErrors=false)->
     if typeof str != "string" then str = str.getValue()
     if /^\s*$/.test(str) then return {errors:[]}
     json = durableJsonLint(str)
-    errors = []
-    for error in json.errors
-        switch error.status
-            when "guessable", "fail","crash"
-                errors.push(error)
-    json.errors = errors
+    if !reportAllErrors
+        errors = []
+        for error in json.errors
+            switch error.status
+                when "guessable", "fail","crash"
+                    errors.push(error)
+        json.errors = errors
     return json
 
 prettyPrintJson=(editor, str=null)->

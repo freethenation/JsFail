@@ -1,0 +1,14 @@
+<% extend 'layout.ect' %>
+<div id="errorDiv" class="alert alert-error std-margin std-padding" style="visibility:hidden; display:none;"><b>Error: </b>There were some errors in the Json. They are marked in the source below.</div>
+<div id="correctDiv" class="alert alert-success std-margin std-padding" style="visibility:hidden;"><b>Valid: </b>There were no errors in the Json!</div>
+<% include 'editor.ect', {fill:true, mode:"text/typescript"} %>
+<script type="text/javascript">
+CodeMirror.defineInitHook(function(editor){
+    var errorDiv = $("#errorDiv");
+    editor.on("change", jstools.debounce(function(){
+        jstools.clearErrors(editor, errorDiv);
+        var ast = jstools.parseJson(editor.getValue(), true);
+        jstools.displayErrors(editor,ast,errorDiv,correctDiv);
+    }, 500))
+})
+</script>
