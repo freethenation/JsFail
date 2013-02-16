@@ -44,6 +44,7 @@ parseJs=(str)->
 
 parseJson=(str)->
     if typeof str != "string" then str = str.getValue()
+    if /^\s*$/.test(str) then return {errors:[]}
     json = durableJsonLint(str)
     errors = []
     for error in json.errors
@@ -55,10 +56,10 @@ parseJson=(str)->
 
 prettyPrintJson=(editor, str=null)->
     if not str then str = editor.getValue()
+    if /^\s*$/.test(str) then return {errors:[]}
     json = parseJson(str)
     if json.errors.length > 0
         return {errors:json.errors,success:false} #critical error... bail
-    console.log(JSON.parse(json.json))
     editor.setValue(JSON.stringify(JSON.parse(json.json), null, "    "))
     return json
 
