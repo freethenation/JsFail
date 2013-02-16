@@ -65,7 +65,8 @@ prettyPrintJson=(editor, str=null)->
     json = parseJson(str)
     if json.errors.length > 0
         return {errors:json.errors,success:false} #critical error... bail
-    editor.setValue(JSON.stringify(JSON.parse(json.json), null, "    "))
+    parsed = eval("(function(){return "+json.json+";})();")
+    editor.setValue(JSON.stringify(parsed, null, "    "))
     return json
 
 prettyPrintJs=(editor, str=null, options={})->
