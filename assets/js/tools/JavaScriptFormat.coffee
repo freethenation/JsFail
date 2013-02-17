@@ -59,14 +59,14 @@ parseJson=(str, reportAllErrors=false)->
         json.errors = errors
     return json
 
-prettyPrintJson=(editor, str=null)->
-    if not str then str = editor.getValue()
+prettyPrintJson=(editor, indent= "    ")->
+    str = editor.getValue()
     if /^\s*$/.test(str) then return {errors:[]}
     json = parseJson(str)
     if json.errors.length > 0
         return {errors:json.errors,success:false} #critical error... bail
     parsed = eval("(function(){return "+json.json+";})();")
-    editor.setValue(JSON.stringify(parsed, null, "    "))
+    editor.setValue(JSON.stringify(parsed, null, indent))
     return json
 
 prettyPrintJs=(editor, str=null, options={})->
