@@ -5,12 +5,11 @@
 <title><%= @nconf.get("appName")%> - <%= @tool?.text %></title>
 <meta name="description" content="<%= @tool?.desc %>">
 <meta name="keywords" content="<%= @tool?.keywords?.join(' ') %>">
-<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
-<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
 <link href="/css/common.css" rel="stylesheet" type="text/css" />
 <link href="/css/codemirror.css" rel="stylesheet" type="text/css" />
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
 <script src="/js/editor.js"></script>
 <% if @tool? : %>
     <% for script in @tool.scripts : %>
