@@ -29,7 +29,7 @@
             <div class="modal-body">
               <ul>
               <% for thank in @tool.thanks : %>
-                <li><a href="javascript:window.open('<%= thank.link %>');"><b><%= thank.name %>:</b><%= thank.desc %></a></li>
+                <li><a href="javascript:window.open('<%= thank.link %>');"><b><%= thank.name %>:</b> <%= thank.desc %></a></li>
               <% end %>
               </ul>
             </div>
