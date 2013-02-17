@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset=utf-8 />
+<title><%= @nconf.get("appName")%> - <%= @tool?.text %></title>
+<meta name="description" content="<%= @tool?.desc %>">
+<meta name="keywords" content="<%= @tool?.keywords?.join(' ') %>">
 <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
 <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
 <link href="/css/common.css" rel="stylesheet" type="text/css" />
@@ -13,15 +17,10 @@
         <script src="<%= script %>"></script>
     <% end %>
 <% end %>
-<meta charset=utf-8 />
-<title><%= @nconf.get("appName")%></title>
 </head>
 <body>
   <% include 'header.ect', this %>
   <div class="row">
-    <div class="span2">
-      <% include 'menu.ect', this %>
-    </div>
     <div id="content" class="span10">
       <% if @tool? : %>
         <div class="page-header">
@@ -30,6 +29,9 @@
         </div>
       <% end %>
       <% content %>
+    </div>
+    <div class="span2">
+      
     </div>
   </div>
 </body>

@@ -63,7 +63,6 @@ logger.info('App Configured!')
 app.get(/\/tools\/.*\.html/, routes.tool)
 app.get('/index.html', routes.simple("index"))
 app.get('/', routes.simple("index"))
-app.get('/about.html', routes.simple("about"))
 
 http.createServer(app).listen(nconf.get("httpPort"), ()->
     logger.info("Server listening on port #{nconf.get('httpPort')}!")

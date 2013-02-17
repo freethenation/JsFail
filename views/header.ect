@@ -1,15 +1,45 @@
 <div class="row" id="header">
-    <div class="navbar span12">
-      <div class="navbar-inner">
-        <a class="brand" href="#"><%= @nconf.get("appName")%></a>
-        <ul class="nav">
-          <li <% if @page=="index" : %>class="active"<% end %>>
-            <a href="/index.html">Home</a>
-          </li>
-          <li <% if @page=="about" : %>class="active"<% end %>>
-            <a href="/about.html">About</a>
-          </li>
-        </ul>
-      </div>
+  <div class="navbar span12">
+    <div class="navbar-inner">
+      <a class="brand" href="#"><%= @nconf.get("appName")%></a>
+      <ul class="nav">
+        <li <% if @page=="index" : %>class="active"<% end %>>
+          <a href="/index.html">Home</a>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            More JS Tools<b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <% for tool in @tools : %>
+              <li <% if @tool?.page==tool.page : %>class="active"<% end %>>
+                  <a href="/tools/<%= tool.page %>.html"><%= tool.text %></a>
+              </li>
+              <% end %>
+          </ul>
+        </li>
+        <% if @tool?.thanks? : %>
+        <li>
+          <a href="#thanksModal" data-toggle="modal">Special Thanks</a>
+          <div id="thanksModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="myModalLabel">Special Thanks To</h3>
+            </div>
+            <div class="modal-body">
+              <ul>
+              <% for thank in @tool.thanks : %>
+                <li><a href="javascript:window.open('<%= thank.link %>');"><b><%= thank.name %>:</b><%= thank.desc %></a></li>
+              <% end %>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <a href="javascript:void(0);" class="btn btn-primary" data-dismiss="modal">Close</a>
+            </div>
+          </div>
+        </li>
+        <% end %>
+      </ul>
     </div>
   </div>
+</div>
