@@ -5,6 +5,7 @@
 <script type="text/javascript">
 CodeMirror.defineInitHook(function(editor){
     var errorDiv = $("#errorDiv");
+    var correctDiv = $("#correctDiv");
     editor.on("change", jstools.debounce(function(){
         jstools.clearErrors(editor, errorDiv);
         var ast = jstools.parseJson(editor.getValue(), true);
