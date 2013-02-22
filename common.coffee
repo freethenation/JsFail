@@ -12,6 +12,7 @@ nconf.defaults({
     debug:true
     logFile:'notify.log'
     appName:'JsFail'
+    analyticsAccount:null
 })
 module.exports.nconf = nconf
 
