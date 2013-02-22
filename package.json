@@ -30,7 +30,7 @@
         "express",
         "coffeescript"
     ],
-    "description": "Simplifies asynchronous control flow in javascript making making  parallel code, synchronous code, and error handling simple",
+    "description": "JsFail is a website containing a collection of JavaScript and Json tools glued together from awesome open source projects from around the net.",
     "homepage": "https://github.com/freethenation/JsFail",
     "author": "Richard Klafter <rpklafter@yahoo.com>",
     "contributors": [
