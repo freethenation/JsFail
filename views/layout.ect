@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title><%= @nconf.get("appName")%> - <%= @tool?.text %></title>
+<title><%= @nconf.get("appName")%> <%= "-" if @tool? %> <%= @tool?.text %></title>
 <meta name="description" content="<%= @tool?.desc %>">
 <meta name="keywords" content="<%= @tool?.keywords?.join(' ') %>">
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
