@@ -38,5 +38,9 @@
             "name": "Richard Klafter",
             "email": "rpklafter@yahoo.com"
         }
-    ]
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/freethenation/JsFail.git"
+    },
 }
